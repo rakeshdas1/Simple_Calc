@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener{
@@ -40,23 +39,23 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 int ansN = 0;
                 final String operN = (String) oper.getSelectedItem();
                 ans.setText(operN);
-                if(operN == "+"){
+                if(operN.equals("+")){
                     ansN = num1N+num2N;
                 }
-                else if (operN == "-"){
+                else if (operN.equals("-")){
                     ansN = num1N-num2N;
                 }
-                else if (operN=="*"){
+                else if (operN.equals("*")){
                     ansN = num1N*num2N;
                 }
-                else if (operN == "/"){
+                else if (operN.equals("/")){
                     ansN = num1N/num2N;
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append("");
                 sb.append(ansN);
                 String ansNS = sb.toString();
-                ans.setText(ansNS);
+                ans.setText("Your answer is" + ansNS);
             }
         });
 
